@@ -1,7 +1,5 @@
 <?php
 
-$DATABASE_URL=parse_url(‘//itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
-’);
 
 return [
 
@@ -60,11 +58,15 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' =>  $DATABASE_URL["ec2-18-232-143-90.compute-1.amazonaws.com"],
-            'port' => $DATABASE_URL["5432"],
+            'host' =>  postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
+["ec2-18-232-143-90.compute-1.amazonaws.com"],
+            'port' => postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
+["5432"],
             'database' => ltrim($DATABASE_URL["dbn3huiflhp5s7"], "/"),
-            'username' => $DATABASE_URL["itkhsonjkkaeqm"],
-            'password' => $DATABASE_URL["5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4"],
+            'username' => postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
+["itkhsonjkkaeqm"],
+            'password' => postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
+["5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4"],
             'charset' => 'utf8',
             'prefix' => true,
             'schema' => 'public',
