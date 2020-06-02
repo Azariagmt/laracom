@@ -1,6 +1,5 @@
 <?php
 
-
 return [
 
     /*
@@ -13,7 +12,6 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
 
     'default' => env('DB_CONNECTION', 'pgsql'),
 
@@ -58,17 +56,13 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' =>  postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
-["ec2-18-232-143-90.compute-1.amazonaws.com"],
-            'port' => postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
-["5432"],
-            'database' => ltrim($DATABASE_URL["dbn3huiflhp5s7"], "/"),
-            'username' => postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
-["itkhsonjkkaeqm"],
-            'password' => postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
-["5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4"],
+            'host' => env('DB_HOST', 'ec2-18-232-143-90.compute-1.amazonaws.com'),
+            'port' => env('DB_PORT', '5432'),
+            'database' => env('DB_DATABASE', 'dbn3huiflhp5s7'),
+            'username' => env('DB_USERNAME', 'itkhsonjkkaeqm'),
+            'password' => env('DB_PASSWORD', '5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4'),
             'charset' => 'utf8',
-            'prefix' => true,
+            'prefix' => '',
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
