@@ -1,5 +1,7 @@
 <?php
 
+$DATABASE_URL=parse_url(‘postgres://itkhsonjkkaeqm:5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4@ec2-18-232-143-90.compute-1.amazonaws.com:5432/dbn3huiflhp5s7
+’);
 return [
 
     /*
@@ -13,7 +15,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,13 +59,13 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' =>  $DATABASE_URL["ec2-18-232-143-90.compute-1.amazonaws.com"],
+            'port' => $DATABASE_URL["5432"],
+            'database' => ltrim($DATABASE_URL["dbn3huiflhp5s7"], "/"),
+            'username' => $DATABASE_URL["itkhsonjkkaeqm"],
+            'password' => $DATABASE_URL["5ec7163aa5844f55db6f2a7b55904233637cfcadf34d08e1c75b2829c73d0fa4"],
             'charset' => 'utf8',
-            'prefix' => '',
+            'prefix' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
